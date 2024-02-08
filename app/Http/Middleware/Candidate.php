@@ -13,8 +13,13 @@ class Candidate
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
-    {
-        return $next($request);
+    public function handle(Request $request, Closure $next): Response{
+
+
+        if(Auth()->user()->role == 'Candidate'){
+            return $next($request);
+        }
+
+        abort(401);
     }
 }

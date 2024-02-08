@@ -22,12 +22,7 @@ return new class extends Migration
             $table->text('informations');
             $table->timestamps();
         });
-        Schema::create('postuler', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('id_candidate')->constrained('candidate')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('joboffer_id')->constrained('joboffers')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamps();
-        });
+        
     }
 
     /**

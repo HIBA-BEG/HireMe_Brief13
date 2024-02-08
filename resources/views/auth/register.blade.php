@@ -18,6 +18,17 @@
 
         <!-- Password -->
         <div class="mt-4">
+            <x-input-label for="role" :value="__('role')" />
+            <select name="role" id="role" required>
+                <option value="Candidate">Candidate</option>
+                <option value="Company">Company</option>
+            </select>
+
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
+
+        <!-- Password -->
+        <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"

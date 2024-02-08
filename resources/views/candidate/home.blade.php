@@ -13,7 +13,7 @@
                             </div>
                         @endif
     
-                        <h1 class="text-white">You are in ADMIN Dashboard!</h1>
+                        <h1 class="text-white">You are in Candidate Dashboard!</h1>
                     </div>
                 </div>
             </div>
@@ -22,5 +22,3 @@
     
     </x-app-layout>
     
-</div>
-
