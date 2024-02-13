@@ -1,242 +1,232 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>JobBoard &mdash; Website Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-    <link rel="stylesheet" href="../../css/custom-bs.css">
-    <link rel="stylesheet" href="../../css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="../../css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="../../fonts/icomoon/style.css">
-    <link rel="stylesheet" href="../../fonts/line-icons/style.css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../css/animate.min.css">
-    <link rel="stylesheet" href="../../css/quill.snow.css">
-    
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="../../css/style.css">    
-  </head>
-  <body id="top">
-
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
-    
-
-<div class="site-wrap">
-
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> <!-- .site-mobile-menu -->
-    
-
-    <!-- NAVBAR -->
-    <header class="site-navbar mt-3">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">JobBoard</a></div>
-
-          <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li class="has-children">
-                <a href="job-listings.html">Job Listings</a>
-                <ul class="dropdown">
-                  <li><a href="job-single.html">Job Single</a></li>
-                  <li><a href="post-job.html">Post a Job</a></li>
-                </ul>
-              </li>
-              <li class="has-children">
-                <a href="services.html">Pages</a>
-                <ul class="dropdown">
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="service-single.html">Service Single</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                  <li><a href="portfolio.html">Portfolio</a></li>
-                  <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li><a href="faq.html">Frequently Ask Questions</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-              </li>
-              <li><a href="blog.html" class="active">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li class="d-lg-none"><a href="post-job.html"><span class="mr-2">+</span> Post a Job</a></li>
-              <li class="d-lg-none"><a href="login.html">Log In</a></li>
-            </ul>
-          </nav>
-          
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-            <div class="ml-auto">
-              <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a>
-              <a href="login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
-            </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-          </div>
-
-        </div>
-      </div>
-    </header>
-
-    <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">Our Blog</h1>
-            <div class="custom-breadcrumbs">
-              <a href="#">Home</a> <span class="mx-2 slash">/</span>
-              <span class="text-white"><strong>About Us</strong></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-single.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
-            <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="images/sq_img_2.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-single.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
-            <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="images/sq_img_4.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-single.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
-            <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="images/sq_img_7.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-single.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
-            <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="images/sq_img_5.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-single.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
-            <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="images/sq_img_6.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-single.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
-            <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-          </div>
-        </div>
-        <div class="row pagination-wrap mt-5">
-          
-          <div class="col-md-12 text-center ">
-            <div class="custom-pagination ml-auto">
-              <a href="#" class="prev">Prev</a>
-              <div class="d-inline-block">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
+<x-app-layout>
+  <!-- component nav bar -->
+  <div class="antialiased bg-gray-100 dark-mode:bg-gray-900">
+      <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+          <div x-data="{ open: true }"
+              class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+              <div class="flex flex-row items-center justify-between p-4">
+                  <a href="#"
+                      class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Flowtrail
+                      UI</a>
+                  <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                      <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                          <path x-show="!open" fill-rule="evenodd"
+                              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                              clip-rule="evenodd"></path>
+                          <path x-show="open" fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                      </svg>
+                  </button>
               </div>
-              <a href="#" class="next">Next</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+              <nav :class="{ 'flex': open, 'hidden': !open }"
+                  class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      href="#">Home</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      href="#">Portfolio</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      href="#">About</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      href="{{ route('profile.edit') }}"> {{ __('Profile') }}</a>
+                  
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
     
-    <footer class="site-footer">
-
-      <a href="#top" class="smoothscroll scroll-top">
-        <span class="icon-keyboard_arrow_up"></span>
-      </a>
-
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-            </ul>
+                        <x-responsive-nav-link href="{{route('logout')}}"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-responsive-nav-link>
+                    </form>
+              </nav>
           </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Support</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Contact Us</h3>
-            <div class="footer-social">
-              <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-instagram"></span></a>
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-12">
-            <p class="copyright"><small>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
-          </div>
-        </div>
       </div>
-    </footer>
-  
   </div>
+  <!-- component nav bar -->
 
-    <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/stickyfill.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/quill.min.js"></script>
-    
-    
-    <script src="js/bootstrap-select.min.js"></script>
-    
-    <script src="js/custom.js"></script>
-   
-   
-     
-  </body>
-</html>
+  <!-- ====== Cards Section Start -->
+  <section class="pt-20 lg:pt-[70px] pb-5 lg:pb-20 bg-[#F3F4F6]">
+      <!-- component -->
+      <div class="flex items-center gap-4 p-6">
+          <button
+              class="flex select-none items-center gap-3 rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button" data-ripple-light="true">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path fill="#ffffff"
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+              </svg>
+              Add an offer
+          </button>
+          <button
+              class="flex select-none items-center gap-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button" data-ripple-light="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z">
+                  </path>
+              </svg>
+              Upload Files
+          </button>
+          <button
+              class="flex select-none items-center gap-3 rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button" data-ripple-dark="true">
+              Refresh
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99">
+                  </path>
+              </svg>
+          </button>
+          <button
+              class="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button" data-ripple-dark="true">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" aria-hidden="true" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3">
+                  </path>
+              </svg>
+          </button>
+      </div>
+      <div class="container">
+          <div class="flex flex-wrap -mx-4">
+              <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                  <div class="bg-white rounded-lg overflow-hidden mb-10">
+                      <img src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-01.jpg" alt="image"
+                          class="w-full" />
+                      <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                          <h3>
+                              <a href="javascript:void(0)"
+                                  class="
+                      font-semibold
+                      text-dark text-xl
+                      sm:text-[22px]
+                      md:text-xl
+                      lg:text-[22px]
+                      xl:text-xl
+                      2xl:text-[22px]
+                      mb-4
+                      block
+                      hover:text-primary
+                      ">
+                                  50+ Best creative website themes & templates
+                              </a>
+                          </h3>
+                          <p class="text-base text-body-color leading-relaxed mb-7">
+                              Lorem ipsum dolor sit amet pretium consectetur adipiscing
+                              elit. Lorem consectetur adipiscing elit.
+                          </p>
+                          <a href="javascript:void(0)"
+                              class="
+                   inline-block
+                   py-2
+                   px-7
+                   border border-[#E5E7EB]
+                   rounded-full
+                   text-base text-body-color
+                   font-medium
+                   hover:border-primary hover:bg-primary hover:text-white
+                   transition
+                   ">
+                              View Details
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                  <div class="bg-white rounded-lg overflow-hidden mb-10">
+                      <img src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-02.jpg" alt="image"
+                          class="w-full" />
+                      <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                          <h3>
+                              <a href="javascript:void(0)"
+                                  class="
+                      font-semibold
+                      text-dark text-xl
+                      sm:text-[22px]
+                      md:text-xl
+                      lg:text-[22px]
+                      xl:text-xl
+                      2xl:text-[22px]
+                      mb-4
+                      block
+                      hover:text-primary
+                      ">
+                                  The ultimate UX and UI guide to card design
+                              </a>
+                          </h3>
+                          <p class="text-base text-body-color leading-relaxed mb-7">
+                              Lorem ipsum dolor sit amet pretium consectetur adipiscing
+                              elit. Lorem consectetur adipiscing elit.
+                          </p>
+                          <a href="javascript:void(0)"
+                              class="
+                   inline-block
+                   py-2
+                   px-7
+                   border border-[#E5E7EB]
+                   rounded-full
+                   text-base text-body-color
+                   font-medium
+                   hover:border-primary hover:bg-primary hover:text-white
+                   transition
+                   ">
+                              View Details
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+                  <div class="bg-white rounded-lg overflow-hidden mb-10">
+                      <img src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-03.jpg"
+                          alt="image" class="w-full" />
+                      <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                          <h3>
+                              <a href="javascript:void(0)"
+                                  class="
+                      font-semibold
+                      text-dark text-xl
+                      sm:text-[22px]
+                      md:text-xl
+                      lg:text-[22px]
+                      xl:text-xl
+                      2xl:text-[22px]
+                      mb-4
+                      block
+                      hover:text-primary
+                      ">
+                                  Creative Card Component designs graphic elements
+                              </a>
+                          </h3>
+                          <p class="text-base text-body-color leading-relaxed mb-7">
+                              Lorem ipsum dolor sit amet pretium consectetur adipiscing
+                              elit. Lorem consectetur adipiscing elit.
+                          </p>
+                          <a href="javascript:void(0)"
+                              class="
+                   inline-block
+                   py-2
+                   px-7
+                   border border-[#E5E7EB]
+                   rounded-full
+                   text-base text-body-color
+                   font-medium
+                   hover:border-primary hover:bg-primary hover:text-white
+                   transition
+                   ">
+                              View Details
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- ====== Cards Section End -->
+
+
+</x-app-layout>

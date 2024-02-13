@@ -33,18 +33,16 @@ Route::get('/admin/home', [AdminController::class, 'index'])->middleware(['auth'
 Route::get('/company/home', [CompanyController::class, 'index'])->middleware(['auth', 'company'])->name('company.home');
 Route::get('/candidat/home', [CandidateController::class, 'index'])->middleware(['auth', 'candidate'])->name('candidate.home');
 
+
+Route::get('/home', [AdminController::class, 'home'])->middleware(['auth', 'admin'])->name('home');
+
+Route::get('/candidat/CV', [CandidateController::class, 'CV'])->middleware(['auth', 'candidate'])->name('candidate.CV');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/home', [AdminController::class, 'home'])->middleware(['auth', 'admin'])->name('home');
-
-// Route::middleware('admin')->group(function () {
-//     Route::get('/admin', [AdminController::class, 'home'])->name('admin.home');
-//     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
 
 require __DIR__.'/auth.php';
