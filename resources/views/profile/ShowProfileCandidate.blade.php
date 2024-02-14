@@ -1,3 +1,8 @@
+
+<?php 
+echo $candidate[0]->id;
+?>
+
 <x-app-layout>
     <!-- component nav bar -->
     <div class="antialiased bg-gray-100 dark-mode:bg-gray-900">
@@ -8,7 +13,7 @@
                     <a href="#"
                         class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Flowtrail
                         UI</a>
-                    <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline">
                         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                             <path x-show="!open" fill-rule="evenodd"
                                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
@@ -23,8 +28,8 @@
                     class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                         href="#">Home</a>
-                    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                        href="#">Portfolio</a>
+                    {{-- <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                        href="{{ route('profile.ShowProfileCandidate') }}">{{ __('My Profile') }}</a> --}}
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                         href="{{ route('profile.CompleteCandidate') }}"> {{ __('Complete My Profile') }}</a>
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
@@ -39,18 +44,29 @@
 
     <body class="bg-gray-100">
         <div class="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
-            <img class="w-32 h-32 rounded-full mx-auto" src="https://picsum.photos/200" alt="Profile picture">
-            <h2 class="text-center text-2xl font-semibold mt-3">John Doe</h2>
-            <p class="text-center text-gray-600 mt-1">Software Engineer</p>
+            <img class="w-32 h-32 rounded-full mx-auto" src="{{asset('images/'.$candidate[0]->profile_pic)}}" alt="Profile picture">
+            <h2 class="text-center text-2xl font-semibold mt-3">{{ $candidate[0]->name }} </h2>
+            <p class="text-center text-gray-600 mt-1">{{ $candidate[0]->titre }} </p>
             <div class="flex justify-center mt-5">
                 <a href="#" class="text-blue-500 hover:text-blue-700 mx-3">Twitter</a>
                 <a href="#" class="text-blue-500 hover:text-blue-700 mx-3">LinkedIn</a>
                 <a href="#" class="text-blue-500 hover:text-blue-700 mx-3">GitHub</a>
             </div>
             <div class="mt-5">
-                <h3 class="text-xl font-semibold">Bio</h3>
-                <p class="text-gray-600 mt-2">John is a software engineer with over 10 years of experience in developing
-                    web and mobile applications. He is skilled in JavaScript, React, and Node.js.</p>
+                <h3 class="text-xl font-semibold">Current Post</h3>
+                <p class="text-gray-600 mt-2">{{ $candidate[0]->poste_actuel }} </p>
+            </div>
+            <div class="mt-5">
+                <h3 class="text-xl font-semibold">Industry</h3>
+                <p class="text-gray-600 mt-2">{{ $candidate[0]->industrie }} </p>
+            </div>
+            <div class="mt-5">
+                <h3 class="text-xl font-semibold">Address</h3>
+                <p class="text-gray-600 mt-2">{{ $candidate[0]->adresse }} </p>
+            </div>
+            <div class="mt-5">
+                <h3 class="text-xl font-semibold">More informations</h3>
+                <p class="text-gray-600 mt-2">{{ $candidate[0]->informations }} </p>
             </div>
         </div>
     </body>

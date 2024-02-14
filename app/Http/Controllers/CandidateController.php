@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Company;
 
 class CandidateController extends Controller
 {
     public function index(){
-        return view('candidate.home');
+        $id=auth()->user()->id;
+        $companies = Company::get();
+        return view('candidate.home', ['companies'=>$companies]);
     }
 }

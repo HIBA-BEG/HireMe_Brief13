@@ -8,6 +8,7 @@ use App\Models\Company;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -42,7 +43,18 @@ class ProfileController extends Controller
 
     public function ShowProfileCandidate()
     {
-        return view('profile.ShowProfileCandidate');
+        
+        $id=auth()->user()->id;
+        $candidate = DB::table('users')
+                        ->join('candidates', "candidates.candidate_id", "=", "users.id")
+                        ->where('users.id', $id)
+                        ->get();
+        // echo '<pre>';
+        // print_r($candidate);
+        // echo '</pre>';
+        // echo $candidate[0]->email;
+        // exit();
+        return view('profile.ShowProfileCandidate',['candidate'=>$candidate]);
     }
 
 
