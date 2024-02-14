@@ -11,8 +11,21 @@ class Candidate extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $fillable = [
+        'profile_pic',
+        'titre',
+        'poste_actuel',
+        'industrie',
+        'adresse',
+        'informations',
+        'candidate_id',
+    ];
   
     public function about(){
-        return view('chercheur.about');
+        return view('Candidate.about');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

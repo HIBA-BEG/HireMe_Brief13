@@ -18,7 +18,7 @@ class CVController extends Controller
 {
     public function createCV(){
         $user = Auth::user();
-        $cv = $user->cv;
+        // $cv = $user->cv;
         return view('candidate.CV',compact('cv'));
     }
 

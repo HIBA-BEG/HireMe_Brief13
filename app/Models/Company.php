@@ -10,4 +10,16 @@ use Laravel\Sanctum\HasApiTokens;
 class Company extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $fillable = [
+        'logo',
+        'slogan',
+        'industrie',
+        'description',
+        'company_id',
+    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
