@@ -19,9 +19,9 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-
+        
         $user = Auth::user();
-
+        
         if ($user->role == 'Candidate') {
             return view('profile.editCandidate', [
                 'user' => $request->user(),
@@ -31,11 +31,14 @@ class ProfileController extends Controller
                 'user' => $request->user(),
             ]);
         }
-
+        
         return view('profile.editCandidate', [
             'user' => $request->user(),
         ]);
     }
+    
+    //CANDIDATE
+    
     public function storeCandidateView()
     {
         return view('profile.CompleteCandidate');
@@ -70,23 +73,23 @@ class ProfileController extends Controller
         }
 
         $request->user()->save();
-
-        return Redirect::route('profile.editCandidate')->with('status', 'profile-updated');
+        
+        return Redirect::route('profile.ShowProfileCandidate')->with('status', 'profile-updated');
     }
 
     public function updateCompany(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
-
+        
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
-
+        
         $request->user()->save();
-
+        
         return Redirect::route('profile.editCompany')->with('status', 'profile-updated');
     }
-
+    
 
     public function storeCandidate(Request $request)
     {
@@ -118,38 +121,78 @@ class ProfileController extends Controller
             'informations' => $validatedData['informations'],
         ]);
 
-        return to_route('profile.editCandidate');
+        return to_route('profile.ShowProfileCandidate');
+    }
+    
+    //ADMIN
+    public function ShowProfileAdmin()
+    {
+        
+        $id=auth()->user()->id;
+        $candidate = DB::table('users')
+                        ->join('candidates', "candidates.candidate_id", "=", "users.id")
+                        ->where('users.id', $id)
+                        ->get();
+        // echo '<pre>';
+        // print_r($candidate);
+        // echo '</pre>';
+        // echo $candidate[0]->email;
+        // exit();
+        return view('profile.ShowProfileAdmin',['candidate'=>$candidate]);
     }
 
+    //COMPANY
+    
+    public function storeCompanyView()
+    {
+        return view('profile.CompleteCompany');
+    }
+
+    public function ShowProfileCompany()
+    {
+        
+        $id=auth()->user()->id;
+        $company = DB::table('users')
+                        ->join('companies', "companies.company_id", "=", "users.id")
+                        ->where('users.id', $id)
+                        ->get();
+        // echo '<pre>';
+        // print_r($company);
+        // echo '</pre>';
+        // echo $company[0]->email;
+        // exit();
+        return view('profile.ShowProfileCompany',['company'=>$company]);
+    }
+
+    
     public function storeCompany(Request $request)
     {
-        try {
-            $request->validate([
-                'logo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
-                'slogan' => ['nullable', 'string', 'max:255'],
-                'industrie' => ['nullable', 'string', 'max:255'],
-                'description' => ['nullable', 'string', 'max:255'],
-            ]);
+        $validatedData = $request->validate([
+            'logo' => 'required',
+            'slogan' => 'required|string',
+            'industrie' => 'required|string',
+            'description' => 'required|string',
+        ]);
 
-
-            $user = Company::create([
-                'logo' => $request->file('logo') ? $request->file('logo')->store('img', 'public') : null,
-                'slogan' => $request->slogan,
-                'industrie' => $request->industrie,
-                'description' => $request->description,
-            ]);
-
-            // dd($Company);
-
-            Company::create($user);
-
-            return redirect(route('profile.editCompany'));
-        } catch (\Exception $e) {
-            // Log or dd($e->getMessage()) to see the exception message
-            dd($e->getMessage());
+        if ($request->hasFile('profile_pic')) {
+            $image = request()->file('profile_pic');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+        } else {
+            $imageName = 'service.png';
         }
-    }
+        // dd($request->hasFile('profile_pic'));
 
+        Company::create([
+            'company_id' => auth()->user()->id,
+            'logo' => $imageName,
+            'slogan' => $validatedData['slogan'],
+            'industrie' => $validatedData['industrie'],
+            'description' => $validatedData['description'],
+        ]);
+
+        return to_route('profile.ShowProfileCompany');
+    }
     /**
      * Delete the user's account.
      */

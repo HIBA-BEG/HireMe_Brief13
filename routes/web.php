@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CVController;
+use App\Http\Controllers\JobOfferController;
 use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
@@ -52,13 +53,24 @@ Route::get('/candidat/CV', [CVController::class, 'createCV'])->middleware(['auth
 
 
 Route::middleware('auth')->group(function () {
+
+    //candidate
     Route::get('/profileCandidate', [ProfileController::class, 'edit'])->name('profile.editCandidate');
     Route::get('/CompleteprofileCandidate', [ProfileController::class, 'storeCandidateView'])->name('profile.CompleteCandidate');
     Route::post('/CompleteprofileCandidate', [ProfileController::class, 'storeCandidate'])->name('profile.storeCandidate');
     Route::get('/ShowProfileCandidate', [ProfileController::class, 'ShowProfileCandidate'])->name('profile.ShowProfileCandidate');
 
+    //admin
+    Route::get('/ShowProfileAdmin', [ProfileController::class, 'ShowProfileAdmin'])->name('profile.ShowProfileAdmin');
+
+    //company
     Route::get('/profileCompany', [ProfileController::class, 'edit'])->name('profile.editCompany');
-    Route::post('/CompleteprofileCompany', [ProfileController::class, 'storeCompany'])->name('profile.CompleteCompany');
+    Route::get('/CompleteprofileCompany', [ProfileController::class, 'storeCompanyView'])->name('profile.CompleteCompany');
+    Route::post('/CompleteprofileCompany', [ProfileController::class, 'storeCompany'])->name('profile.storeCompany');
+    Route::get('/ShowProfileCompany', [ProfileController::class, 'ShowProfileCompany'])->name('profile.ShowProfileCompany');
+    Route::get('/AddOffer', [JobOfferController::class, 'StoreOfferView'])->name('company.AddOffer');
+    Route::post('/AddOffer', [JobOfferController::class, 'StoreOffer'])->name('company.AddOffer');
+
     Route::patch('/profileCandidate', [ProfileController::class, 'updateCandidate'])->name('profile.updateCandidate');
     // Route::patch('/profileCompany', [ProfileController::class, 'update'])->name('profile.updateCompany');
 

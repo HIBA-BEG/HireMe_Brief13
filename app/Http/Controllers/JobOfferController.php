@@ -13,7 +13,7 @@ class JobOfferController extends Controller
 {
     public function publishOfferAll()
     {
-        $offers = JobOffer::with('entreprise')
+        $offers = JobOffer::with('company')
         ->orderBy('created_at', 'desc')
         ->get();
         
@@ -31,36 +31,33 @@ class JobOfferController extends Controller
     return view('company.offre', ['offers' => $offers]);
 }
 
-    public function storePublishOffer(Request $request): RedirectResponse
+    public function StoreOfferView()
     {
-        try {
-            $request->validate([
-                'nom' => ['required', 'string', 'max:255'],
-                'titre' => ['required', 'string', 'max:255'],
-                'description' => ['required', 'string'],
-                'competences' => ['required', 'array'],
-                'type_contrat' => ['required', 'string', 'in:a distance,hybride,a temps plein'],
-                'emplacement' => ['required', 'string'],
-            ]);
+        return view('company.AddOffer');
+    }
 
-            $competencesJson = json_encode($request->input('competences'));
+// storePublishOffer
+    public function StoreOffer(Request $request)
+    {
+        $validatedData = $request->validate([
+            'titre' => 'required|string',
+            'description' => 'required|string',
+            'required_skills' => 'required|string',
+            'contract_type' => 'required|string',
+            'location' => 'required|string',
+        ]);
 
-            $user = Auth::user();
+        // dd($request->hasFile('profile_pic'));
 
-            JobOffer::create([
-                'nom' => $request->nom,
-                'titre' => $request->titre,
-                'description' => $request->description,
-                'competences' => $competencesJson,
-                'type_contrat' => $request->type_contrat,
-                'emplacement' => $request->emplacement,
-                'user_id' => $user->id,
-            ]);
+        JobOffer::create([
+            'company_id' => auth()->user()->id,
+            'titre' => $validatedData['titre'],
+            'description' => $validatedData['description'],
+            'required_skills' => $validatedData['required_skills'],
+            'contract_type' => $validatedData['contract_type'],
+            'location' => $validatedData['location'],
+        ]);
 
-            return redirect()->route('jobs');
-        } catch (\Exception $e) {
-
-            dd($e->getMessage());
-        }
+        return to_route('company.AddOffer');
     }
 }

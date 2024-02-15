@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class JobOffer extends Model
 {
     use HasFactory;
-
+    
+    protected $table = 'joboffers';
     protected $fillable = [
         'titre',
         'description',
@@ -18,7 +19,7 @@ class JobOffer extends Model
         'company_id',
     ];
 
-    public function entreprise()
+    public function company()
 {
     return $this->belongsTo(User::class, 'company_id');
 }
