@@ -46,15 +46,15 @@ class User extends Authenticatable
 
     public function candidate()
     {
-        return $this->hasOne(Candidate::class);
+        return $this->hasOne(Candidate::class, 'candidate_id');
     }
     public function company()
     {
-        return $this->hasOne(Company::class);
+        return $this->hasOne(Company::class, 'company_id');
     }
     public function cv()
     {
-        return $this->hasOne(CV::class);
+        return $this->hasOne(CV::class, 'id_candidate');
     }
 
 }

@@ -20,6 +20,10 @@ class Company extends Model
     ];
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'company_id');
+    }
+    public function joboffers()
+    {
+        return $this->hasmany(JobOffer::class, 'company_id');
     }
 }

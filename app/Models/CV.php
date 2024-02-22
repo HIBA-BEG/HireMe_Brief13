@@ -9,19 +9,19 @@ class CV extends Model
 {
     use HasFactory;
 
-    // protected $table = 'cvs';
+    protected $table = 'cvs';
     
     protected $fillable = [
         'competences',
         'experiences',
         'cursus',
         'langues',
-        'id_canddate',
+        'id_candidate',
     ];
 
-    public function user()
+    public function candidate()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Candidate::class, 'id_candidate');
     }
 
 }

@@ -16,11 +16,16 @@ class JobOffer extends Model
         'required_skills',
         'contrat_type',
         'location',
+        'archive',
         'company_id',
     ];
 
-    public function company()
-{
-    return $this->belongsTo(User::class, 'company_id');
-}
+//     public function company()
+// {
+//     return $this->belongsTo(User::class, 'company_id');
+// }
+public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id');
+    }
 }

@@ -18,13 +18,12 @@ class CVController extends Controller
 {
     public function createCV(){
         $user = Auth::user();
-        // $cv = $user->cv;
+        $cv = $user->cv;
         return view('candidate.CV',compact('cv'));
     }
 
-    public function storeCV(Request $request): RedirectResponse
+    public function storeCV(Request $request)
     {
-        try {
             $request->validate([
                 'competences' => ['nullable', 'array'],
                 'experiences' => ['nullable', 'array'],
@@ -33,9 +32,10 @@ class CVController extends Controller
             ]);
     
             $user = Auth::user();
+            $candidate = $user->candidate;
     
             if ($user->cv) {
-                return redirect()->route('cvs')->with('error', 'You already have a CV.');
+                return redirect()->route('candidate.home')->with('error', 'You already have a CV.');
             }
     
             $competencesJson = json_encode($request->input('competences'));
@@ -48,25 +48,21 @@ class CVController extends Controller
                 'experiences' => $experiencesJson, 
                 'cursus' => $cursusJson, 
                 'langues' => $languesJson, 
-                'id_candidate' => $user->id,
+                'id_candidate' => $candidate->id,
             ]);
     
-            return redirect()->route('cvs'); 
+            return to_route('candidate.home'); 
     
-        } catch (\Exception $e) {
-            // Handle exceptions appropriately
-            dd($e->getMessage());
-        }
     }
 
 
-    public function downloadCv()
-    {
-        $cv = CV::where('id_candidate', auth()->id())->firstOrFail();
+    // public function download()
+    // {
+    //     $cv = CV::where('id_candidate', auth()->id())->firstOrFail();
 
-        $pdf = FacadePdf::loadView('candidate.CvPDF', compact('cv'));
+    //     $pdf = FacadePdf::loadView('candidate.CvPDF', compact('cv'));
 
-        return $pdf->download('your_cv.pdf');
-    }
+    //     return $pdf->download('your_cv.pdf');
+    // }
 
 }

@@ -29,27 +29,23 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// route::get('/home',[HomeController::class, 'index']);
-
-Route::get('/admin/home', [AdminController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.home');
-Route::get('/company/home', [CompanyController::class, 'index'])->middleware(['auth', 'company'])->name('company.home');
-Route::get('/candidat/home', [CandidateController::class, 'index'])->middleware(['auth', 'candidate'])->name('candidate.home');
+Route::get('/admin/home', [JobOfferController::class, 'publishOfferAll'])->middleware(['auth', 'admin'])->name('admin.home');
+Route::get('/company/home', [JobOfferController::class, 'publishOfferAll'])->middleware(['auth', 'company'])->name('company.home');
+Route::get('/candidate/home', [JobOfferController::class, 'publishOfferAll2'])->middleware(['auth', 'candidate'])->name('candidate.home');
 
 
 Route::get('/home', [AdminController::class, 'home'])->middleware(['auth', 'admin'])->name('home');
 
-Route::get('/candidat/CV', [CVController::class, 'createCV'])->middleware(['auth', 'candidate'])->name('candidate.CV');
+Route::get('/archive-offer/{offerId}', [JobOfferController::class, 'archiveOffer'])->middleware(['auth', 'company'])->name('archive.joboffer');
 
 
-// Route::get('/jobOffers', [EmploiController::class, 'publishOfferAll'])->name('AllOffers');
-// Route::get('/jobs', [EmploiController::class, 'publishOffer'])->middleware(['auth', 'entreprise'])->name('jobs');
-// Route::post('/jobs', [EmploiController::class, 'storePublishOffer'])->name('jobs.store');
 
 
 // Route::get('/cvs', [CvController::class, 'createCV'])->middleware(['auth', 'chercheur'])->name('cvs');
-// Route::post('/cvs', [CvController::class, 'storeCV'])->name('cvs.store');
-// Route::get('/download', [CVController::class, 'downloadCv'])->middleware(['auth', 'chercheur'])->name('downloadCv');
+Route::get('/candidat/CV', [CVController::class, 'createCV'])->middleware(['auth', 'candidate'])->name('candidate.CV');
+Route::post('/CcandidateCV', [CVController::class, 'storeCV'])->name('candidate.storeCV');
 
+Route::get('/candidate/download', [CVController::class, 'downloadCv'])->middleware(['auth', 'candidate'])->name('candidate.download');
 
 
 Route::middleware('auth')->group(function () {
@@ -63,12 +59,13 @@ Route::middleware('auth')->group(function () {
     //admin
     Route::get('/ShowProfileAdmin', [ProfileController::class, 'ShowProfileAdmin'])->name('profile.ShowProfileAdmin');
 
+
     //company
     Route::get('/profileCompany', [ProfileController::class, 'edit'])->name('profile.editCompany');
     Route::get('/CompleteprofileCompany', [ProfileController::class, 'storeCompanyView'])->name('profile.CompleteCompany');
     Route::post('/CompleteprofileCompany', [ProfileController::class, 'storeCompany'])->name('profile.storeCompany');
     Route::get('/ShowProfileCompany', [ProfileController::class, 'ShowProfileCompany'])->name('profile.ShowProfileCompany');
-    Route::get('/AddOffer', [JobOfferController::class, 'StoreOfferView'])->name('company.AddOffer');
+    Route::get('/AddOffer', [JobOfferController::class, 'StoreOfferView'])->name('company.AddOfferView');
     Route::post('/AddOffer', [JobOfferController::class, 'StoreOffer'])->name('company.AddOffer');
 
     Route::patch('/profileCandidate', [ProfileController::class, 'updateCandidate'])->name('profile.updateCandidate');

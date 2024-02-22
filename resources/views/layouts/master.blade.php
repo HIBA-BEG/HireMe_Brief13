@@ -12,13 +12,9 @@
 </head>
 
 <body>
-    @include('partials.nav')
     <main>
         @yield('home')
-        @yield('jobOffers')
     </main>
-    @include('partials.footer')
-    {{-- <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 

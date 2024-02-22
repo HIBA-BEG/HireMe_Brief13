@@ -174,8 +174,8 @@ class ProfileController extends Controller
             'description' => 'required|string',
         ]);
 
-        if ($request->hasFile('profile_pic')) {
-            $image = request()->file('profile_pic');
+        if ($request->hasFile('logo')) {
+            $image = request()->file('logo');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $imageName);
         } else {
