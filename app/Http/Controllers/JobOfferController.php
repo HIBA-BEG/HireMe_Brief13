@@ -14,10 +14,11 @@ class JobOfferController extends Controller
 {
     // public function publishOfferAll()
     // {
-    //     $offers = JobOffer::with('company')
-    //     ->orderBy('created_at', 'desc')
-    //     ->get();
+    //     $query = JobOffer::with('company')
+    //         ->orderBy('created_at', 'desc');
 
+    //     $query->whereNull('archive');
+    //     $offers = $query->get();
     //     return view('company.home', ['offers' => $offers]);
     // }
 

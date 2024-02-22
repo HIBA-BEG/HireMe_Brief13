@@ -39,11 +39,9 @@ Route::get('/home', [AdminController::class, 'home'])->middleware(['auth', 'admi
 Route::get('/archive-offer/{offerId}', [JobOfferController::class, 'archiveOffer'])->middleware(['auth', 'company'])->name('archive.joboffer');
 
 
-
-
-// Route::get('/cvs', [CvController::class, 'createCV'])->middleware(['auth', 'chercheur'])->name('cvs');
-Route::get('/candidat/CV', [CVController::class, 'createCV'])->middleware(['auth', 'candidate'])->name('candidate.CV');
-Route::post('/CcandidateCV', [CVController::class, 'storeCV'])->name('candidate.storeCV');
+Route::get('/candidat/CV', [CVController::class, 'storeCVview'])->middleware(['auth', 'candidate'])->name('candidate.CV');
+Route::post('/CandidateCV', [CVController::class, 'storeCV'])->middleware(['auth', 'candidate'])->name('candidate.storeCV');
+Route::get('/CandidateMyCV', [CVController::class, 'showCV'])->middleware(['auth', 'candidate'])->name('candidate.showCV');
 
 Route::get('/candidate/download', [CVController::class, 'downloadCv'])->middleware(['auth', 'candidate'])->name('candidate.download');
 

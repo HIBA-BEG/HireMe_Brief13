@@ -9,18 +9,35 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use App\Models\CV;
-
+use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
 
 class CVController extends Controller
 {
-    public function createCV(){
+    public function storeCVview(){
         $user = Auth::user();
         $cv = $user->cv;
         return view('candidate.CV',compact('cv'));
     }
+
+    public function ShowCV()
+    {
+        
+        $id=auth()->user()->id;
+        $cv = DB::table('candidates')
+                        ->join('cvs', "cvs.id_candidate", "=", "candidates.candidate_id")
+                        ->where('candidates.candidate_id', $id)
+                        ->get();
+        // echo '<pre>';
+        // print_r($CV);
+        // echo '</pre>';
+        // echo $CV[0]->email;
+        // exit();
+        return view('candidate.ShowCV',['cv'=>$cv]);
+    }
+
 
     public function storeCV(Request $request)
     {
