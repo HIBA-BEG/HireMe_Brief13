@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use App\Models\JobOffer;
 use App\Http\Controllers\User;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -88,7 +89,36 @@ class JobOfferController extends Controller
         return view('company.AddOffer');
     }
 
-    // storePublishOffer
+    public function updateOfferView($offerId)
+    {
+        $offer = JobOffer::find($offerId);
+        return view('company.update', ['offer' => $offer]);
+    }
+    public function update(Request $request,$offerId)
+    {
+        $offer = JobOffer::find($offerId);
+
+        if($offer){
+
+            $validatedData = $request->validate([
+                'titre' => 'required|string',
+                'description' => 'required|string',
+                'contract_type' => 'required|string|in:à distance,hybride,à temps plein',
+                'location' => 'required|string',
+            ]);
+            
+            $offer->update([
+                'titre' => $validatedData['titre'],
+                'description' => $validatedData['description'],
+                'contract_type' => $validatedData['contract_type'],
+                'location' => $validatedData['location'],
+            ]);
+
+            return redirect()->route('company.home');
+        }
+        return redirect()->route('company.home');
+    
+     }
     public function StoreOffer(Request $request)
     {
         $validatedData = $request->validate([
@@ -128,17 +158,5 @@ class JobOfferController extends Controller
         return redirect()->route('company.home')->with('error', 'Offer not found');
     }
 
-    // public function postuler(Request $request, JobOffer $emploi)
-    // {
-    //     $user = auth()->user();
-
-    //     if ($user->emplois->contains($emploi)) {
-    //         return redirect()->route('AllOffers')->with('error', 'You have already applied for this job.');
-    //     }
-
-    //     $user->emplois()->attach($emploi);
-
-    //     return redirect()->route('AllOffers')->with('success', 'Application successful!');
-    // }
 
 }

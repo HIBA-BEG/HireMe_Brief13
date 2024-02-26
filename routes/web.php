@@ -37,6 +37,8 @@ Route::get('/candidate/home', [JobOfferController::class, 'publishOfferAll2'])->
 Route::get('/home', [AdminController::class, 'home'])->middleware(['auth', 'admin'])->name('home');
 
 Route::get('/archive-offer/{offerId}', [JobOfferController::class, 'archiveOffer'])->middleware(['auth', 'company'])->name('archive.joboffer');
+Route::get('/update-offer/{offerId}', [JobOfferController::class, 'updateOfferView'])->middleware(['auth', 'company'])->name('update.joboffer');
+Route::patch('/update-offer/{offerId}', [JobOfferController::class, 'update'])->middleware(['auth', 'company'])->name('update.joboffer');
 
 
 Route::get('/candidat/CV', [CVController::class, 'storeCVview'])->middleware(['auth', 'candidate'])->name('candidate.CV');
